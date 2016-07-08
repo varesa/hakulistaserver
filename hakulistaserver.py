@@ -29,7 +29,7 @@ def after_request(response):
 api = Api(app)
 
 # SQLAlchemy
-engine = create_engine('sqlite:///C:\\Users\\E\\hakulistaserver.sqlite', echo=True)
+engine = create_engine('sqlite:///var/www/hakulistaserver/hakulistaserver.sqlite', echo=True)
 DBSession.configure(bind=engine)
 Base.metadata.create_all(engine)
 
@@ -48,4 +48,4 @@ def hello_world():
 
 if __name__ == '__main__':
     debug = 'debug' in os.environ.keys()
-    app.run(debug=debug)
+    app.run(host="0.0.0.0", debug=debug)

@@ -1,0 +1,3 @@
+*.sqlite
+*.pyc
+*.egg-info
